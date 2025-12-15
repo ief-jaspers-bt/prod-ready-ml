@@ -164,6 +164,7 @@ def compute_days_upon_outcome(split_age):
         Age in days
 
     """
+
     time = split_age.apply(lambda x: x[0] if x[0] != "Unknown" else np.nan)
     period = split_age.apply(lambda x: x[1] if x[0] != "Unknown" else None)
     period_mapping = {
