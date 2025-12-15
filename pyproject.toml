@@ -1,0 +1,45 @@
+[project]
+name = "animal-shelter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ief-jaspers-bt", email = "ief.jaspers@budgetthuis.nl" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.3.3",
+]
+
+[project.scripts]
+animal-shelter = "animal_shelter:main"
+
+[build-system]
+requires = ["uv_build>=0.9.0,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.9",
+]
+
+[tool.ruff.lint]
+extend-select = [
+  "UP", # pyupgrade
+  # "D",  # pydocstyle
+  "N",  # PEP8 names
+  "I",  # isort
+  # "ANN"
+]
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+     ".venv"
+]
